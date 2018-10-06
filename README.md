@@ -10,6 +10,7 @@
 > * 만들 페이지의 TODO 주석을 지우고 콘텐츠 영역을 작성합니다.
 > * #main_contents 외부는 수정 금지
 > * w3schools.com과 getbootstrap.com을 참고하여 반응형 웹페이지로 만들것
+> * HTML5 표준대로 만들것
 > * css와 js파일은 가능하면 외부 파일로 관리
 
 ### 디렉토리 구성
