@@ -3,8 +3,8 @@
 
 ###페이지 작성 방법
 >       <div id="main_contents">
-          <!--TODO 이곳에 페이지 내용을 작성합니다.-->
-      </div>
+>          <!--TODO 이곳에 페이지 내용을 작성합니다.-->
+>      </div>
 * 만들 페이지의 TODO 주석을 지우고 콘텐츠 영역을 작성합니다.
 * #main_contents 외부는 수정 금지
 * w3schools.com과 getbootstrap.com을 참고하여 반응형 웹페이지로 만들것
