@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/layout.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/layout.css">
+  </head>
+  <body>
+    <div id="row" class="row container-fluid p-0 m-0">
+      <!--왼쪽 메뉴-->
+      <div id="nav" class="d-none d-md-block col-md-3 d-xl-block col-xl-2 p-0">
+          <div id="nav_header">
+            <span style="font-size:24px; font-weight: bold; float:left">T-MARKET</span>
+            <i onclick="nav_hide();" class="fa fa-close d-block d-md-none d-xl-none" style="font-size:36px; float:right;"></i>
+          </div>
+
+          <div id="nav_login">
+            <p><b>'로그아웃'</b> 상태입니다.<br>로그인하여 T-MARKET에 가입하여 더 많은 헤텍을 누리세요</p>
+            <a class="nav-link d-inline p-0 mr-1" href="#">로그인</a>
+            <a class="nav-link d-inline p-0 mr-1" href="#">회원가입</a>
+            <a class="nav-link d-inline p-0 mr-1" href="#">ID/PW찾기</a>
+          </div>
+
+          <div id="nav_menu">
+            <span style="font-size:16px; font-weight: bold;">카테고리</span>
+            <ul>
+              <li>SHOP
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">SHOW ALL</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">BEST</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">SALE</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">NEW</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>고객센터
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">공지사항</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">FAQ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">QnA</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">오시는 길</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!--로그인해야 보여지는 메뉴입니다.-->
+              <li>마이페이지
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">주문조회</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">반품/환불</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">회원정보변경</a>
+                  </li>
+                </ul>
+              </li>
+
+              <!--관리자만 보여지는 메뉴입니다.-->
+              <li>관리자
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">회원관리</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">주문관리</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link p-0" href="#">상품관리</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      <!--중앙 컨텐츠&상단바-->
+      <div id="main" class="col-12 col-md-9 d-xl-block col-xl-8 p-0">
+        <div id="main_header" class="navbar bg-dark navbar-dark">
+          <!--메뉴 버튼-->
+          <span>
+            <button onclick="nav_show()" class="navbar-toggler d-block d-md-none d-xl-none" type="button">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </span>
+
+          <!--타이틀-->
+          <a class="navbar-brand p-0" href="#" style="font-size:24px;font-weight: bold;" >T-MARKET</a>
+
+          <!--카트 버튼-->
+          <span>
+            <button onclick="cart_show()" class="navbar-toggler d-block d-md-block d-xl-none" type="button">
+              <i class="fa fa-shopping-cart" style="font-size:30px;"></i>
+            </button>
+          </span>
+        </div>
+
+        <div id="main_contents">
+          <!--TODO 이곳에 페이지 내용을 작성합니다.-->
+          이곳에 페이지 내용을 작성합니다.
+        </div>
+      </div>
+
+      <!--오른쪽 메뉴(장바구니)-->
+      <div id="cart" class="d-none d-md-none d-xl-block col-xl-2 p-0">
+        <div id="cart_header">
+            <i onclick="cart_hide();" class="fa fa-close d-block d-md-block d-xl-none" style="font-size:36px; float:left;"></i>
+            <span style="font-size:24px; font-weight: bold; float:right">CART</span>
+          </div>
+        <div id="cart_list">
+            <ul>
+              <li>
+                <div class="row container-fluid p-0 m-0">
+                  <div class="col-4 p-0">
+                    <img src="../image/sampleT.png" alt="" style="width:100%">
+                  </div>
+                  <div class="col-8 p-0" style="text-align:right">
+                    <span style="font-weight:bold;">SAMPLE NAME</span><br>
+                    3 EA<br>
+                    10,000원<br>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row container-fluid p-0 m-0">
+                  <div class="col-4 p-0">
+                    <img src="../image/sampleT.png" alt="" style="width:100%">
+                  </div>
+                  <div class="col-8 p-0" style="text-align:right">
+                    <span style="font-weight:bold;">SAMPLE NAME</span><br>
+                    3 EA<br>
+                    10,000원<br>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row container-fluid p-0 m-0">
+                  <div class="col-4 p-0">
+                    <img src="../image/sampleT.png" alt="" style="width:100%">
+                  </div>
+                  <div class="col-8 p-0" style="text-align:right">
+                    <span style="font-weight:bold;">SAMPLE NAME</span><br>
+                    3 EA<br>
+                    10,000원<br>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <p style="text-align:right;font-weight:bold;font-size:24px;">TOTAL :  79,000원</p>
+            <button type="button" style="float:right;" class="btn btn-primary m-1">주문하기</button>
+            <button type="button" style="float:right;" class="btn btn-danger m-1">비우기</button>
+            <hr style="clear:both;">
+          </div>
+      </div>
+    </div>
+
+    <!--메뉴오픈시 배경 어둡게 처리-->
+    <div id="side_back" class="m-0 p-0" onclick="nav_hide(); cart_hide();"></div>
+  </body>
+</html>
