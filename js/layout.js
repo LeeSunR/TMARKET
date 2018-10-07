@@ -14,21 +14,28 @@ $(window).resize(function(){
 });
 
 function layoutInit(){
+  $("#cart").css("height",0+"px");
+  $("#nav").css("height",0+"px");
+  
   var window_height = $(window).height();
   var nav_height = $("#nav_header").height()+$("#nav_login").height()+$("#nav_menu").height()+25;
   var cart_height = $("#cart_header").height()+$("#cart_list").height()+25;
+  var page_height = $("body").prop('scrollHeight');
+  var side_height;
 
-  if(nav_height>cart_height && window_height<nav_height)
-    $("#cart").css("height",nav_height+"px");
-  else if(window_height>cart_height)
-      $("#cart").css("height",window_height+"px");
-  else
-    $("#cart").css("height",cart_height+"px");
+  if(window_height>=nav_height && window_height >= cart_height && window_height >= page_height)
+    side_height = window_height;
 
-  if(window_height>nav_height)
-    $("#nav").css("height",window_height+"px");
-  else
-    $("#nav").css("height",nav_height+"px");
+  else if(nav_height>=window_height && nav_height >= cart_height && nav_height >= page_height)
+    side_height = nav_height;
+
+  else if(cart_height>=nav_height && cart_height >= window_height && cart_height >= page_height)
+    side_height = cart_height;
+
+  else if(page_height>=nav_height && page_height >= cart_height && page_height >= window_height)
+    side_height = page_height;
+  $("#cart").css("height",side_height+"px");
+  $("#nav").css("height",side_height+"px");
   sideBackInit();
 }
 
