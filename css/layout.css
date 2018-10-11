@@ -61,6 +61,12 @@ body{
   color:orange;
 }
 
+#main_footer{
+  padding: 5px;
+  background-color: orange;
+  text-align: center;
+}
+
 #cart{
   background-color: white;
 }
