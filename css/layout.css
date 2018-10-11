@@ -3,6 +3,29 @@ body{
   padding: 0px;
 }
 
+/*extra small devices*/
+@media (max-width:576px){
+}
+
+/*small devices*/
+@media (min-width:576px){
+}
+
+/*medium devices*/
+@media (min-width:768px){
+  #main{
+    position: absolute;
+    right: 0px;
+  }
+}
+
+/*xlarge devices*/
+@media (min-width:1200px){
+  #main{
+    position: relative;
+  }
+}
+
 .nopadding {
    padding: 0 !important;
    margin: 0 !important;
@@ -50,9 +73,6 @@ body{
   font-weight:normal;
   list-style: none;
   padding-left: 15px;
-}
-#main{
-  right: 0px;
 }
 
 #main_header .navbar-brand{
