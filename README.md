@@ -1,5 +1,5 @@
 # JSP 프로젝트.
-## http://baka.kr/tmarket/ <<TEST 페지
+## http://baka.kr/tmarket/ <<TEST 페이지
 1분마다 자동 갱신됩니다.
 
 #### 10월 14일 까지 화면 만들기
