@@ -43,6 +43,8 @@ body{
     color: darkblue !important;
 }
 
+
+
 #nav_header{
   background-color: white;
   height: 36px;
@@ -52,8 +54,20 @@ body{
 #nav_login{
   background-color: white;
   clear: both;
-  padding: 4px;
   font-size: 13px;
+}
+
+.login_link{
+  color: gray;
+
+  padding: 5px 0px;
+  border: 1px solid #CCC;
+  text-align: center;
+}
+.login_link:hover{
+  text-decoration: none;
+  color: #999;
+  background-color: #F5F5F5;
 }
 
 #nav_menu{
