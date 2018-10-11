@@ -1,7 +1,4 @@
 .home_slide_item{
-  height: 15em;
-  border: 1px solid black;
-  box-sizing: border-box;
 }
 #t_list{
   text-align: center;
@@ -12,6 +9,7 @@
 }
 
 #list_choice button{
+  cursor: pointer;
   font-weight: bold;
   width: 100px;
   font-size: 24px;
@@ -31,10 +29,18 @@
   color:gray;
 }
 
+#list_item li{
+  position: relative;
+  color: gray;
+}
+
 #list_item li:hover{
   cursor: pointer;
-  color: orange;
+  color: #CCC;
+  border: 1px solid #CCC;
+  box-sizing:  border-box;
 }
+
 #list_item li:hover img{
   opacity: 0.6;
 }
