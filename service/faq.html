@@ -99,7 +99,7 @@
         </div>
 
       <!--중앙 컨텐츠&상단바-->
-      <div id="main" class="col-12 col-md-9 d-xl-block col-xl-8 p-0">
+      <div id="main" class="col-12 col-md-9 d-xl-block col-xl-8 p-0 m-0 m-xl-auto">
         <div id="main_header" class="navbar bg-dark navbar-dark">
           <!--메뉴 버튼-->
           <span>
@@ -119,9 +119,26 @@
           </span>
         </div>
 
-        <div id="main_contents">
-          <!--TODO 이곳에 페이지 내용을 작성합니다.-->
-          이곳에 페이지 내용을 작성합니다.
+        <div id="main_contents" class="pt-1">
+          <div class="form-group p-md-5 p-0">
+            <formaction="index.html" method="post">
+              <h2> QnA </h2><br>
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+              <label for="name">Your Name:</label>
+              <input type="name" class="form-control" id="name" placeholder="Enter Your Name" name="name">
+              <label for="comment">Comment:</label>
+              <textarea class="form-control" rows="15" id="comment"></textarea>
+              <div style="text-align:right; margin-top:15px;">
+                <button type="button" class="btn btn-primary">전송</button>
+              </div>
+            </form>
+          </div>
+          <!--클릭하면 관리자 메일로 보내지게 함 form action=""안에 변경.-->
+        </div>
+
+        <div id="main_footer">
+          © 2018 by T-MARKET.
         </div>
       </div>
 

@@ -52,6 +52,7 @@ body{
   padding-left: 15px;
 }
 #main{
+  right: 0px;
 }
 
 #main_header .navbar-brand{
@@ -68,6 +69,7 @@ body{
 }
 
 #cart{
+  right: 0px;
   background-color: white;
 }
 
@@ -99,4 +101,8 @@ body{
   top: 0px;
   left: 0px;
   z-index: 1;
+}
+
+.fixinner{
+    position:fixed;
 }
