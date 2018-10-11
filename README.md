@@ -1,4 +1,4 @@
-# JSP 프로젝트
+# JSP 프로젝트.
 #### 10월 14일 까지 화면 만들기
 * 페이지별 링크는 아직 서로 연결되어 있지 않습니다.
 * jsp코드는 중간고사 이후에 수정합니다.
@@ -37,4 +37,4 @@
 >     * <b>login.html</b>　로그인
 >     * <b>signup.html</b>　회원가입
 >     * <b>forget.html</b>　ID/PW찾기
-> * <b>index.html</b>　최상위 페이지 
+> * <b>index.html</b>　최상위 페이지
