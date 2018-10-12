@@ -23,7 +23,7 @@ body{
 @media (min-width:1200px){
   #main{
     position: relative;
-    margin: auto;
+    margin: 0px auto;
   }
 }
 
