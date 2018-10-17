@@ -8,25 +8,10 @@
     <script src="../js/bootstrap.js"></script>
     <script src="../js/layout.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link type="text/css" rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/layout.css">
     <title>로그인|T-MARKET</title>
-    <script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-  crossorigin="anonymous"></script>
-    <script>
-        $(function() {
-
-            $('ul.tab li a').on('click',function(e) {
-                e.preventDefault();
-                $('ul.tab li').removeClass('on');
-                $(this).closest('li').addClass('on');
-            });
-        });
-    </script>
   </head>
   <body>
     <div id="row" class="row container-fluid p-0 m-0">
@@ -137,29 +122,49 @@
         </div>
 
         <div id="main_contents">
+          <!--HEAD-->
+          <script>
+              $(function() {
+                  $('ul.tab li a').on('click',function(e) {
+                      e.preventDefault();
+                      $('ul.tab li').removeClass('on');
+                      $(this).closest('li').addClass('on');
+                  });
+              });
+          </script>
+          <link type="text/css" rel="stylesheet" href="../css/login.css">
           <!--TODO 이곳에 페이지 내용을 작성합니다.-->
-          <h1></h1>
-          <ul  class="tab">
-            <li class="on">
-                <a class="on" href="#">회원로그인</a>
-            </li><li class="on">
-                <a href="#">관리자로그인</a>
-            </li>
-        </ul>
-    <form action="/loginSubmit.html">
-        <input class="login" type="email" placeholder="아이디를 입력해 주세요."/>
-        <input class="login" type="password"placeholder="비밀번호를 입력해 주세요."/>
+          <div class="m-5">
 
-        <button class="btn" type="submit">로그인</button>
-        <input id="check1" type="checkbox"/><label for="check1">자동 로그인</label>
-    </form>
-    <ul>
-        <li><a href="#">페이스북 로그인</a></li>
-        <li><a href="#">네이버 로그인</a></li>
-        <li><a href="#">카카오 로그인</a></li>
-        <li><a href="#">구글 로그인</a></li>
-    </ul>
-    <p>회원이 아직 아니세요?<a href="#">회원가입</a></p>
+            <!--관리자 회원 변경-->
+            <h2>로그인</h2>
+            <ul  class="tab">
+              <li class="on">
+                <a class="on" href="#">회원로그인</a>
+              </li><li class="on">
+                <a href="#">관리자로그인</a>
+              </li>
+            </ul>
+
+            <!--로그인 폼-->
+            <form action="/loginSubmit.html" method="post">
+              <input class="login" type="email" placeholder="아이디를 입력해 주세요."/>
+              <input class="login" type="password"placeholder="비밀번호를 입력해 주세요."/>
+              <button class="btn" type="submit">로그인</button>
+              <input id="check1" type="checkbox"/><label for="check1">자동 로그인</label>
+            </form>
+          </div>
+
+          <!--외부로그인-->
+          <ul>
+            <li><a href="#">페이스북 로그인</a></li>
+            <li><a href="#">네이버 로그인</a></li>
+            <li><a href="#">카카오 로그인</a></li>
+            <li><a href="#">구글 로그인</a></li>
+          </ul>
+
+          <!--메시지-->
+          <p>회원이 아직 아니세요?<a href="#">회원가입</a></p>
         </div>
       </div>
 
