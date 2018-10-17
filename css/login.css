@@ -1,9 +1,9 @@
-ul{
+#main_contents ul{
     margin: 0;
     padding: 0;
 }
 
-.tab li{
+#main_contents .tab li{
     text-align: center;
     display:inline-block;
     background-color:#f8f8f8;
@@ -15,17 +15,17 @@ ul{
     box-sizing: border-box;
 
 }
-.tab li.on{
+#main_contents .tab li.on{
     border:solid 1px #3399ff;
     border-bottom-width:0;
     background-color: #fff;
 }
-.tab li a{
+#main_contents .tab li a{
     color:#666666;
     text-decoration:none;
 }
 
-input.login {
+#main_contents input.login {
     border:solid 1px #d2d2d2;
     height: 43px;
     font-size: 16px;
@@ -33,10 +33,10 @@ input.login {
     width:100%;
     padding: 0 10px 0 10px;
     box-sizing: border-box;
-    
+
 }
 
-button.btn{
+#main_contents button.btn{
     margin-top:19px;
     background-color: #3399ff;
     color:#fff;
