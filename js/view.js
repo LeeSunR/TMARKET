@@ -1,8 +1,3 @@
-$(document).ready(function(){
-  var time = setInterval(nextImagePrint(), 2);
-});
-
-var images = $(".image_snapshots_item").find("img");
-
-function nextImagePrint(){
+function imgChange(img){
+  $("#big_image").find("img").attr("src",img.src);
 }
