@@ -22,22 +22,22 @@
 > * <b>css</b>　css폴더
 > * <b>image</b>　image폴더
 > * <b>shop</b>
->     * <b>list.html</b>　상품리스트
+>     * <b>list.html</b>　상품리스트 http://baka.kr/tmarket/shop/list.html
 > * <b>service</b>
->     * <b>notice.html</b>　공지사항
->     * <b>faq.html</b>　FAQ
->     * <b>qna.html</b>　QnA
->     * <b>map.html</b>　오시는길
+>     * <b>notice.html</b>　공지사항 http://baka.kr/tmarket/service/notice.html
+>     * <b>faq.html</b>　FAQ http://baka.kr/tmarket/service/faq.html
+>     * <b>qna.html</b>　QnA http://baka.kr/tmarket/service/qna.html
+>     * <b>map.html</b>　오시는길 http://baka.kr/tmarket/service/map.html
 > * <b>mypage</b>
->     * <b>order.html</b>　주문조회
->     * <b>refund.html</b>　반품/환불
->     * <b>edit.html</b>　회원정보변경
+>     * <b>order.html</b>　주문조회 http://baka.kr/tmarket/mypage/order.html
+>     * <b>refund.html</b>　반품/환불 http://baka.kr/tmarket/mypage/refund.html
+>     * <b>edit.html</b>　회원정보변경 http://baka.kr/tmarket/mypage/edit.html
 > * <b>admin</b>
->     * <b>item.html</b>　상품관리
->     * <b>member.html</b>　회원관리
->     * <b>order.html</b>　주문관리
+>     * <b>item.html</b>　상품관리 http://baka.kr/tmarket/admin/item.html
+>     * <b>member.html</b>　회원관리 http://baka.kr/tmarket/admin/member.html
+>     * <b>order.html</b>　주문관리 http://baka.kr/tmarket/admin/order.html
 > * <b>member</b>
->     * <b>login.html</b>　로그인
->     * <b>signup.html</b>　회원가입
->     * <b>forget.html</b>　ID/PW찾기
-> * <b>index.html</b>　최상위 페이지
+>     * <b>login.html</b>　로그인 http://baka.kr/tmarket/member/login.html
+>     * <b>signup.html</b>　회원가입 http://baka.kr/tmarket/member/signup.html
+>     * <b>forget.html</b>　ID/PW찾기 http://baka.kr/tmarket/member/forget.html
+> * <b>index.html</b>　최상위 페이지 http://baka.kr/tmarket
