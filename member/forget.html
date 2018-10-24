@@ -19,30 +19,30 @@
             <span style="font-size:24px; font-weight: bold; float:left">T-MARKET</span>
             <i onclick="nav_hide();" class="fa fa-close d-block d-md-none d-xl-none" style="font-size:36px; float:right;"></i>
           </div>
-
           <div id="nav_login">
-            <p><b>'로그아웃'</b> 상태입니다.<br>로그인하여 T-MARKET에 가입하여 더 많은 헤텍을 누리세요</p>
-            <a class="nav-link d-inline p-0 mr-1" href="#">로그인</a>
-            <a class="nav-link d-inline p-0 mr-1" href="#">회원가입</a>
-            <a class="nav-link d-inline p-0 mr-1" href="#">ID/PW찾기</a>
+            <p style="padding:5px;margin:0px;"><b>'로그아웃'</b> 상태입니다.<br>로그인하여 T-MARKET에 가입하여 더 많은 헤텍을 누리세요</p>
+            <div class="row container-fluid p-0 m-0">
+              <a class="col-4 login_link" href="../member/login.html">로그인</a>
+              <a class="col-4 login_link" href="../member/signup.html">회원가입</a>
+              <a class="col-4 login_link" href="../member/forget.html">계정찾기</a>
+            </div>
           </div>
-
           <div id="nav_menu">
             <span style="font-size:16px; font-weight: bold;">카테고리</span>
             <ul>
               <li>SHOP
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">SHOW ALL</a>
+                    <a class="nav-link p-0" href="../shop/list.html">SHOW ALL</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">BEST</a>
+                    <a class="nav-link p-0" href="../shop/list.html">BEST</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">SALE</a>
+                    <a class="nav-link p-0" href="../shop/list.html">SALE</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">NEW</a>
+                    <a class="nav-link p-0" href="../shop/list.html">NEW</a>
                   </li>
                 </ul>
               </li>
@@ -50,16 +50,16 @@
               <li>고객센터
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">공지사항</a>
+                    <a class="nav-link p-0" href="../service/notice.html">공지사항</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">FAQ</a>
+                    <a class="nav-link p-0" href="../service/faq.html">FAQ</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">QnA</a>
+                    <a class="nav-link p-0" href="../service/qna.html">QnA</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">오시는 길</a>
+                    <a class="nav-link p-0" href="../service/map.html">오시는 길</a>
                   </li>
                 </ul>
               </li>
@@ -68,13 +68,13 @@
               <li>마이페이지
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">주문조회</a>
+                    <a class="nav-link p-0" href="../mypage/myorder.html">주문조회</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">반품/환불</a>
+                    <a class="nav-link p-0" href="../mypage/refund.html">반품/환불</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">회원정보변경</a>
+                    <a class="nav-link p-0" href="../mypage/myinfo.html">회원정보변경</a>
                   </li>
                 </ul>
               </li>
@@ -83,19 +83,18 @@
               <li>관리자
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">회원관리</a>
+                    <a class="nav-link p-0" href="../admin/member.html">회원관리</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">주문관리</a>
+                    <a class="nav-link p-0" href="../admin/order.html">주문관리</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link p-0" href="#">상품관리</a>
+                    <a class="nav-link p-0" href="../admin/item.html">상품관리</a>
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
-
         </div>
 
       <!--중앙 컨텐츠&상단바-->
@@ -109,7 +108,7 @@
           </span>
 
           <!--타이틀-->
-          <a class="navbar-brand p-0" href="#" style="font-size:24px;font-weight: bold;" >T-MARKET</a>
+          <a class="navbar-brand p-0" href="../index.html" style="font-size:24px;font-weight: bold;" >T-MARKET</a>
 
           <!--카트 버튼-->
           <span>
