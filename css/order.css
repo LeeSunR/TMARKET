@@ -15,3 +15,9 @@
   font-size: 18px;
   font-weight: bold;
 }
+.order_img{
+  text-align: center;
+}
+.order_img img{
+  width: 100%;
+}
