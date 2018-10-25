@@ -37,6 +37,7 @@ function layoutInit(){
   var page_height = $("#main").height();
   var side_height;
 
+
   if(window_height>=nav_height && window_height >= cart_height && window_height >= page_height)
     side_height = window_height;
 
