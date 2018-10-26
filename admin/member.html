@@ -232,9 +232,10 @@
               </li>
             </ul>
             <p style="text-align:right;font-weight:bold;font-size:24px;">TOTAL :  79,000원</p>
-            <button type="button" style="float:right;" class="btn btn-primary m-1">주문하기</button>
-            <button type="button" style="float:right;" class="btn btn-danger m-1">비우기</button>
-            <hr style="clear:both;">
+            <div class="p-2">
+              <button type="button" onclick="emptyCart()" style="width:100%" class="btn btn-danger m-0">비우기</button>
+              <button type="button" onclick="order()" style="width:100%" class="btn btn-primary mt-2">주문하기</button>
+            </div>
           </div>
       </div>
     </div>
