@@ -23,8 +23,10 @@
 > * <b>image</b>　image폴더
 > * <b>shop</b>
 >     * <b>list.html</b>★　상품리스트 http://baka.kr/tmarket/shop/list.html
->     * <b>itemview.html</b>☆　상품보기 http://baka.kr/tmarket/shop/itemview.html
+>     * <b>itemview.html</b>★　상품보기 http://baka.kr/tmarket/shop/itemview.html
 >     * <b>itemcreate.html</b>★　상품등록 http://baka.kr/tmarket/shop/itemcreate.html
+>     * <b>payment.html</b>★　주문 http://baka.kr/tmarket/shop/payment.html
+>     * <b>paymentOk.html</b>★　주문완료 http://baka.kr/tmarket/shop/paymentOk.html
 > * <b>service</b>
 >     * <b>notice.html</b> 공지사항 http://baka.kr/tmarket/service/notice.html
 >     * <b>faq.html</b>　FAQ http://baka.kr/tmarket/service/faq.html
