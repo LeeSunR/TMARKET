@@ -8,6 +8,11 @@ function delCart(){
 
 function order(){
   alert("order");
+  location.href="shop/payment.html";
+}
+
+function payment(){
+  alert("payment");
 }
 
 function emptyCart(){

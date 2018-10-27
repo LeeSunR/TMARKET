@@ -161,7 +161,7 @@
             <h4>주문정보</h4>
 
             <hr>
-            <form action="#" method="POST">
+            <form action="paymentOk.html" method="POST">
               <input type="text" name="password" class="form-control input-lg" placeholder="이름" />
               <br>
               <input type="text" name="password" class="form-control input-lg" placeholder="주소" />
@@ -173,7 +173,7 @@
               <input type="radio" name="howtopay" value="pay2" id="pay2"><label for="pay2" class="mr-2">실시간 계좌이체</label>
               <input type="radio" name="howtopay" value="pay3" id="pay3"><label for="pay3" class="mr-2">무통장입금</label>
 
-              <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit">결재하기</button>
+              <button class="btn btn-lg btn-primary btn-block signup-btn" type="submit" onclick="payment();">결재하기</button>
             </form>
           </div>
         </div>
