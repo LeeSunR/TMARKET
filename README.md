@@ -11,3 +11,7 @@
 ### 프로젝트 생성
 > * git 디렉토리에서 jsp/Working Tree/JSP_Eclipse 마우스 오른쪽 클릭
 > * Import Projects.. 클릭 Finish 클릭
+> * JAVA EE로 이동 프로젝트가 생성되었는지 확인 후 작업
+
+### commit pull push
+> * 프로젝트 마우스 우클릭 > team > 원하는것 클릭
