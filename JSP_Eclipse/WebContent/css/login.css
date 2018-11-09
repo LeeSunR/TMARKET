@@ -1,0 +1,50 @@
+#main_contents ul{
+    margin: 0;
+    padding: 0;
+}
+
+#main_contents .tab li{
+    text-align: center;
+    display:inline-block;
+    background-color:#f8f8f8;
+    height: 40px;
+    border-top: solid 1px #e8e8e8;
+    border-bottom: solid 1px #3399ff;
+    width:50%;
+    line-height:40px;
+    box-sizing: border-box;
+
+}
+#main_contents .tab li.on{
+    border:solid 1px #3399ff;
+    border-bottom-width:0;
+    background-color: #fff;
+}
+#main_contents .tab li a{
+    color:#666666;
+    text-decoration:none;
+}
+
+#main_contents input.login {
+    border:solid 1px #d2d2d2;
+    height: 43px;
+    font-size: 16px;
+    display: block;
+    width:100%;
+    padding: 0 10px 0 10px;
+    box-sizing: border-box;
+
+}
+
+#main_contents button.btn{
+    margin-top:19px;
+    background-color: #3399ff;
+    color:#fff;
+    border-width: 0;
+    height:50px;
+    font-size:16px;
+    font-weight:bold;
+    display:block;
+    width:100%;
+    border-radius: 3px;
+}

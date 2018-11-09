@@ -1,0 +1,23 @@
+.order_item{
+
+  border-bottom: 1px solid gray;
+  box-sizing: border-box;
+}
+
+.order_buttons{
+  text-align: center;
+}
+
+.order_item_info{
+  border-bottom: 1px solid #CCC;
+}
+.order_item_info_title{
+  font-size: 18px;
+  font-weight: bold;
+}
+.order_img{
+  text-align: center;
+}
+.order_img img{
+  width: 100%;
+}

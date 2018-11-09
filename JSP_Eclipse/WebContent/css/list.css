@@ -1,0 +1,23 @@
+#list_item{
+  text-align: center;
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 20px;
+  color:gray;
+}
+
+#list_item li{
+  position: relative;
+  color: gray;
+}
+
+#list_item li:hover{
+  cursor: pointer;
+  color: #CCC;
+  border: 1px solid #CCC;
+  box-sizing:  border-box;
+}
+
+#list_item li:hover img{
+  opacity: 0.6;
+}

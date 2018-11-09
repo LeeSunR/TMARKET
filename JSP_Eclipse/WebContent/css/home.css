@@ -1,0 +1,56 @@
+.home_slide_item{
+}
+#t_list{
+  text-align: center;
+  margin: 25px;
+}
+#list_choice{
+  background-color: red;
+}
+
+#list_choice button{
+  cursor: pointer;
+  font-weight: bold;
+  width: 100px;
+  font-size: 24px;
+  background-color: white;
+  border: 6px solid white;
+
+}
+
+
+.list_choice_active{
+  color:orange;
+  border-bottom: 6px solid orange !important;
+}
+
+#list_item{
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 20px;
+  color:gray;
+}
+
+#list_item li{
+  position: relative;
+  color: gray;
+}
+
+#list_item li:hover{
+  cursor: pointer;
+  color: #CCC;
+  border: 1px solid #CCC;
+  box-sizing:  border-box;
+}
+
+#list_item li:hover img{
+  opacity: 0.6;
+}
+
+.item_name{
+
+}
+
+.item_price{
+
+}
