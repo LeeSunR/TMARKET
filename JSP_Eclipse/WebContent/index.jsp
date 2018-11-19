@@ -1,5 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String content = request.getParameter("p");
+	if(content==null) content = "home.jsp";
+%>
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -42,7 +48,7 @@
 		        </div>
 		        
 		        <!-- 메인 컨텐츠 -->
-				<jsp:include page="home.jsp" flush="false"/>
+				<jsp:include page="<%=content %>" flush="false"/>
 				
 				<!-- 푸터 -->
 				<div id="main_footer">
