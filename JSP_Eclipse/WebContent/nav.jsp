@@ -1,18 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<jsp:useBean id="Member" class="useBean.Member" scope="session" >
+    <jsp:setProperty name="Member" property="*"/>
+</jsp:useBean>    
     <%
-    	String idt = (String)session.getAttribute("idt");
-    	String grade = (String)session.getAttribute("grade");
-    %>
+	request.setCharacterEncoding("UTF-8");
+	String dbidt = Member.getIdt();
+	String dbpassword = Member.getPassword();
+
+	String idt = (String)session.getAttribute("idt");
+	String grade = (String)session.getAttribute("grade");
+%>
     
     
 	<div id="nav_header">
 		<span style="font-size:24px; font-weight: bold; float:left">T-MARKET</span>
 		<i onclick="nav_hide();" class="fa fa-close d-block d-md-none d-xl-none" style="font-size:36px; float:right;"></i>
 	</div>
+	
 	<div id="nav_login">
+	<%if(!dbidt.equals(idt)){ %>
 		<p style="padding:5px;margin:0px;"><b>'로그아웃'</b> 상태입니다.<br>로그인하여 T-MARKET에 가입하여 더 많은 헤텍을 누리세요</p>
+		<%}else
+			out.println(idt+"님 환영합니다.");%>
 		<div class="row container-fluid p-0 m-0">
 			<a class="col-4 login_link" href="/JSP_Eclipse/index.jsp?p=member/login.jsp">로그인</a>
 			<a class="col-4 login_link" href="/JSP_Eclipse/index.jsp?p=member/signup.jsp">회원가입</a>
