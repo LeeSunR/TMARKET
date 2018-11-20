@@ -1,39 +1,43 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page  import = "java.sql.*" %>
+<%@ page import = "java.sql.*" %>
 
-<jsp:useBean id="Member" class="useBean.Member" scope="session" >
-    <jsp:setProperty name="Member" property="*"/>
-</jsp:useBean>
+
 <%
 	request.setCharacterEncoding("UTF-8");
-	String idt = Member.getIdt();
-	String password = Member.getPassword();
-%>
-<!-- TODO DB search -->
-<%
-int check=0;
-Connection conn = null;
-Statement stmt = null;
-conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jsptest", "root", "dongyang");
-try{
+	String idt = request.getParameter("idt");
+	String password = request.getParameter("password");
+	
+	Connection conn = null;
+	PreparedStatement pstmt = null; 
+	
 	Class.forName("com.mysql.jdbc.Driver");
+	conn = DriverManager.getConnection("jdbc:mysql://baka.kr:3306/dongyang", "dongyang", "dongyang");
 	
-	stmt = conn.createStatement();
-	ResultSet rs = stmt.executeQuery("select * from MEMBER where IDT =" + idt);
+	try{
+		pstmt = conn.prepareStatement("SELECT * FROM MEMBER WHERE IDT=?");
+		pstmt.setString(1, idt);
+		ResultSet rs = pstmt.executeQuery();
 		
-	if(rs.next()){
-		if(idt.equals(rs.getString("idt"))){
-			session.setAttribute("idt", idt);
-			response.sendRedirect("/JSP_Eclipse/index.jsp");
+		if(rs.next()){
+			
+			if(password.equals(rs.getString("password"))){
+				session.setAttribute("idt", idt);
+				response.sendRedirect("/JSP_Eclipse/index.jsp");
+			}
+			else{
+				out.println("<script>alert('아이디 혹은 비밀번호가 일치하지 않습니다.');history.back();</script>");
+			}
 		}
+		else{
+			out.println("<script>alert('아이디 혹은 비밀번호가 일치하지 않습니다.');history.back();</script>");
+		}
+		
+	}catch(Exception e){
+			out.println(e.getMessage());
+	}finally{
+		if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
+		if(conn != null) try{conn.close();}catch(SQLException sqle){}
 	}
-	
-}catch(Exception e){
-		out.println("실패");
-}finally{
-	if(stmt != null) try{stmt.close();}catch(SQLException sqle){}
-	if(conn != null) try{conn.close();}catch(SQLException sqle){}
-}
 
 %>

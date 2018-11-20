@@ -16,32 +16,31 @@ ResultSet rs = null;
 try{
 	Class.forName("com.mysql.jdbc.Driver");
 	
-	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jsptest", "root", "dongyang");
+	conn = DriverManager.getConnection("jdbc:mysql://baka.kr:3306/dongyang", "dongyang", "dongyang");
 	
 	pstmt = conn.prepareStatement(
-			"insert into MEMBER(IDT, PASSWORD, CONFIRM_PASSWORD, NAME, BIRTH, EMAIL) values(?, ?, ?, ?, ?, ?)");
+			"insert into MEMBER(IDT, PASSWORD, NAME, BIRTH, EMAIL) values(?, ?, ?, ?, ?)");
 	
 	String idt = Member.getIdt();
 	String passwd = Member.getPassword();
-	String conpass = Member.getConfirm_password();
 	String name = Member.getName();
 	String birth = Member.getBirth();
 	String email = Member.getEmail();
 	
 	pstmt.setString(1, idt);
 	pstmt.setString(2, passwd);
-	pstmt.setString(3, conpass);
-	pstmt.setString(4, name);
-	pstmt.setString(5, birth);
-	pstmt.setString(6, email);
+	pstmt.setString(3, name);
+	pstmt.setString(4, birth);
+	pstmt.setString(5, email);
 	pstmt.executeUpdate();
 	out.println("완료");
-}catch(Exception e){
-		out.println("실패");
-}finally{
-	if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
-	if(conn != null) try{conn.close();}catch(SQLException sqle){}
-}
+	}catch(Exception e){
+		out.println(e.getMessage());
+	}finally{
+		if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
+		if(conn != null) try{conn.close();}catch(SQLException sqle){}
+		response.sendRedirect("/JSP_Eclipse/index.jsp");
+	}
 %>
 
 

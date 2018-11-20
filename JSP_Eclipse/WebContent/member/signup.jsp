@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <div id="main_contents">
-     <script src="../js/signup.js">
+     <script src="/JSP_Eclipse/js/signup.js">
 
      </script>
      <div class="m-5">
@@ -27,7 +27,7 @@
        </div>
        <hr>
        <h4>정보입력</h4>
-       <form onsubmit="return termsCheck(this);" action="signupProcess.jsp" method="GET">
+       <form onsubmit="return termsCheck(this);" action="/JSP_Eclipse/member/signupProcess.jsp" method="GET">
          <input type="text" name="idt" class="form-control input-lg" placeholder="아이디" />
          <br>
          <input id="password" type="password" name="password" class="form-control input-lg" placeholder="패스워드" />
