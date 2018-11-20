@@ -9,7 +9,6 @@
 <!-- TODO DB INSERT -->
 
 <%
-
 Connection conn = null;
 PreparedStatement pstmt = null; 
 ResultSet rs = null;
@@ -38,7 +37,6 @@ try{
 	}finally{
 		if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
 		if(conn != null) try{conn.close();}catch(SQLException sqle){}
-		out.println("<script>alert('회원가입이 성공적으로 실행되었습니다.');</script>");
 		response.sendRedirect("/JSP_Eclipse/index.jsp");
 	}
 %>

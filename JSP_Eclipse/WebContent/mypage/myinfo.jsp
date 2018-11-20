@@ -59,10 +59,10 @@
 
     <!--페스워드 변경-->
     <h4>비밀번호</h4>
-    <form onsubmit="return passCheck(this);" action="/JSP_Eclipse/member/loginProcess.jsp" method="GET">
-      <input type="password" name="password" class="form-control input-lg" placeholder="기존 비밀번호" />
+    <form onsubmit="return passCheck(this);" action="/JSP_Eclipse/member/myinfoProcess.jsp" method="GET">
+      <input type="password" name="ps1_password" class="form-control input-lg" placeholder="기존 비밀번호" />
       <br>
-      <input id="new_password" type="password" name="new_password" class="form-control input-lg" placeholder="새로운 비밀번호" />
+      <input id="new_password" type="password" name="new_ps1_password" class="form-control input-lg" placeholder="새로운 비밀번호" />
       <br>
       <input id="new_confirm_password" type="password" name="new_confirm_password" class="form-control input-lg" placeholder="비밀번호 재입력" />
       <br>
@@ -70,8 +70,8 @@
     </form>
     <br>
     <h4>기타정보</h4>
-    <form action="/JSP_Eclipse/member/loginProcess.jsp" method="GET">
-      <input type="password" name="password" class="form-control input-lg" placeholder="패스워드" />
+    <form action="/JSP_Eclipse/member/myinfoProcess.jsp" method="GET">
+      <input type="password" name="ps2_password" class="form-control input-lg" placeholder="패스워드" />
       <br>
       <input type="text" name="name" class="form-control input-lg" value=<%=name.toString() %> />
       <br>  

@@ -34,11 +34,7 @@
          <br>
          <input id="confirm_password" type="password" name="confirm_password" class="form-control input-lg" placeholder="패스워드 재입력" />
          <br>
-         <div class="row">
-           <div class="col-xs-6 col-md-6">
-             <input type="text" name="name" class="form-control input-lg" placeholder="이름" />
-           </div>
-         </div>
+         <input type="text" name="name" class="form-control input-lg" placeholder="이름" />
          <br>
          <input type="text" name="birth" class="form-control input-lg" placeholder="생년월일" />
          <br>

@@ -26,8 +26,9 @@
 			<a class="col-4 login_link" href="/JSP_Eclipse/index.jsp?p=member/forget.jsp">계정찾기</a>
 			<%}else{%>
 			
-			<a class="col-6 login_link" href="/JSP_Eclipse/member/logout.jsp">로그아웃</a>
-			<a class="col-6 login_link" href="/JSP_Eclipse/index.jsp?p=mypage/myinfo.jsp">회원정보변경</a>
+			<a class="col-4 login_link" href="/JSP_Eclipse/member/logout.jsp">로그아웃</a>
+			<a class="col-4 login_link" href="/JSP_Eclipse/index.jsp?p=mypage/myinfo.jsp">회원정보변경</a>
+			<a class="col-4 login_link" href="/JSP_Eclipse/member/deleteid.jsp">회원탈퇴</a>
 			
 			<%}%>
 			
