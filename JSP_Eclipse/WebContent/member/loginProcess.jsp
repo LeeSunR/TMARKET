@@ -20,7 +20,6 @@
 		ResultSet rs = pstmt.executeQuery();
 		
 		if(rs.next()){
-			
 			if(password.equals(rs.getString("password"))){
 				session.setAttribute("idt", idt);
 				response.sendRedirect("/JSP_Eclipse/index.jsp");

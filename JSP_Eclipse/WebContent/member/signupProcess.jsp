@@ -33,12 +33,12 @@ try{
 	pstmt.setString(4, birth);
 	pstmt.setString(5, email);
 	pstmt.executeUpdate();
-	out.println("완료");
 	}catch(Exception e){
 		out.println(e.getMessage());
 	}finally{
 		if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
 		if(conn != null) try{conn.close();}catch(SQLException sqle){}
+		out.println("<script>alert('회원가입이 성공적으로 실행되었습니다.');</script>");
 		response.sendRedirect("/JSP_Eclipse/index.jsp");
 	}
 %>
