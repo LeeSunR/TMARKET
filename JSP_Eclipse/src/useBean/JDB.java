@@ -6,7 +6,7 @@ public class JDB {
 	
 	static private Connection conn = null;
 	static private PreparedStatement pstmt = null;
-	private static final String HOST = "jdbc:mysql://192.168.219.101:3306/dongyang";
+	private static final String HOST = "jdbc:mysql://baka.kr:3306/dongyang";
 	private static final String USERNAME = "dongyang";
 	private static final String PASSWORD = "dongyang";
 	
