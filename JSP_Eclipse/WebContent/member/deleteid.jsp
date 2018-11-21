@@ -25,3 +25,6 @@
        <input class="login" type="password" name="password" placeholder="비밀번호를 입력해 주세요."/>
        <button class="btn" type="submit" onsubmit="next();">회원 탈퇴</button>
      </form>
+     
+    </div>
+ </div>
