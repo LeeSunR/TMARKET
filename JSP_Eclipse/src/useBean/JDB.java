@@ -11,9 +11,11 @@ public class JDB {
 	private static final String PASSWORD = "dongyang";
 	
 	public JDB(){
+		//static 클래스입니다.
 	}
 	
-	public static boolean login(Member member) {
+	//DB연결
+	private static void connect_MYSQL() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(HOST, USERNAME, PASSWORD);
@@ -22,7 +24,20 @@ public class JDB {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+	}
+	
+	//DB연결 해제
+	private static void close_MYSQL() {
+		if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
+		if(conn != null) try{conn.close();}catch(SQLException sqle){}
+	}
+	
+	/*
+	 * 로그인
+	 */
+	public static boolean login(Member member) {
 		
+		connect_MYSQL();
 		try{
 			pstmt = conn.prepareStatement("SELECT * FROM MEMBER WHERE IDT=?");
 			pstmt.setString(1, member.getIdt());
@@ -39,22 +54,17 @@ public class JDB {
 		}catch(Exception e){
 				System.out.println(e.getMessage());
 		}finally{
-			if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
-			if(conn != null) try{conn.close();}catch(SQLException sqle){}
+			close_MYSQL();
 		}
 		return false;
 	}
 	
+	/*
+	 * 회원가입
+	 */
 	public static boolean signup(Member member) {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(HOST, USERNAME, PASSWORD);
-		} catch (ClassNotFoundException e) {
-			System.out.println(e.getMessage());
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
 		
+		connect_MYSQL();
 		try{
 			pstmt = conn.prepareStatement("insert into MEMBER(IDT, PASSWORD, NAME, BIRTH, EMAIL) values(?, ?, ?, ?, ?)");
 			
@@ -73,24 +83,17 @@ public class JDB {
 		}catch(Exception e){
 				System.out.println(e.getMessage());
 		}finally{
-			if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
-			if(conn != null) try{conn.close();}catch(SQLException sqle){}
+			close_MYSQL();
 		}
 		return false;
 	}
 	
-	
+	/*
+	 * 회원정보 가져오기
+	 */	
 	public static void getMyinfo(Member m) {
 		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(HOST, USERNAME, PASSWORD);
-		} catch (ClassNotFoundException e) {
-			System.out.println(e.getMessage());
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		
+		connect_MYSQL();
 		try{
 			pstmt = conn.prepareStatement("SELECT * FROM MEMBER WHERE IDT=?");
 			pstmt.setString(1, m.getIdt());
@@ -107,20 +110,16 @@ public class JDB {
 		}catch(Exception e){
 				System.out.println(e.getMessage());
 		}finally{
-			if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
-			if(conn != null) try{conn.close();}catch(SQLException sqle){}
+			close_MYSQL();
 		}
 	}
 	
+	/*
+	 * 비밀번호 변경
+	 */
 	public static boolean update_password(Member member, String new_password) {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(HOST, USERNAME, PASSWORD);
-		} catch (ClassNotFoundException e) {
-			System.out.println(e.getMessage());
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
+		
+		connect_MYSQL();
 		try{
 			pstmt = conn.prepareStatement("SELECT * FROM MEMBER WHERE IDT=?");
 			pstmt.setString(1, member.getIdt());
@@ -136,22 +135,17 @@ public class JDB {
 		}catch(Exception e){
 				System.out.println(e.getMessage());
 		}finally{		
-			if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
-			if(conn != null) try{conn.close();}catch(SQLException sqle){}
+			close_MYSQL();
 		}	
 		return false;
 	}
 	
+	/*
+	 * 회원정보 수정
+	 */	
 	public static boolean update_info(Member member) {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(HOST, USERNAME, PASSWORD);
-		} catch (ClassNotFoundException e) {
-			System.out.println(e.getMessage());
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
 		
+		connect_MYSQL();
 		try{
 			pstmt = conn.prepareStatement("SELECT * FROM MEMBER WHERE IDT=?");
 			pstmt.setString(1, member.getIdt());
@@ -170,23 +164,17 @@ public class JDB {
 		}catch(Exception e){
 				System.out.println(e.getMessage());
 		}finally{		
-			if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
-			if(conn != null) try{conn.close();}catch(SQLException sqle){}
+			close_MYSQL();
 		}	
 		return false;
 	}
 	
+	/*
+	 * 회원삭제
+	 */	
 	public static boolean delete(Member member) {
 		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(HOST, USERNAME, PASSWORD);
-		} catch (ClassNotFoundException e) {
-			System.out.println(e.getMessage());
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		
+		connect_MYSQL();
 		try{
 			pstmt = conn.prepareStatement("SELECT * FROM MEMBER WHERE IDT=?");
 			pstmt.setString(1, member.getIdt());
@@ -201,8 +189,7 @@ public class JDB {
 		}catch(Exception e){
 				System.out.println(e.getMessage());
 		}finally{		
-			if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
-			if(conn != null) try{conn.close();}catch(SQLException sqle){}
+			close_MYSQL();
 		}
 		return false;
 	}

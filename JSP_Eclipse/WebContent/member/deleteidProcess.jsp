@@ -12,7 +12,7 @@
 			response.sendRedirect("/JSP_Eclipse/index.jsp");
 		}
 		else{
-			response.sendRedirect("/JSP_Eclipse/index.jsp?p=member/deleteid.jsp");
+			response.sendRedirect("/JSP_Eclipse/index.jsp?p=member/deleteid.jsp?error");
 		}
 %>
 

@@ -19,13 +19,13 @@
 			response.sendRedirect("/JSP_Eclipse/index.jsp");
 		}
 		else{
-			response.sendRedirect("/JSP_Eclipse/index.jsp?p=myinfo.jsp");
+			response.sendRedirect("/JSP_Eclipse/index.jsp?p=myinfo.jsp?error");
 		}
 	else
 		if(useBean.JDB.update_password(member,new_password)){
 			response.sendRedirect("/JSP_Eclipse/index.jsp");
 		}
 		else{
-			response.sendRedirect("/JSP_Eclipse/index.jsp?p=myinfo.jsp");
+			response.sendRedirect("/JSP_Eclipse/index.jsp?p=myinfo.jsp?error");
 		}
 %>

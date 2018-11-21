@@ -6,6 +6,9 @@
   <!--TODO 이곳에 페이지 내용을 작성합니다.-->
   <script>
     function passCheck(form){
+   	  <% if(request.getParameter("errer")!=null){ %>
+	  	alert("회원정보 변경에 실패했습니다.");
+	  <% } %>
       if ($("#new_password").val()!=$("#new_confirm_password").val()||$("#new_confirm_password").val()==""){
         alert("새로운 페스워드가 일치하지 않습니다.");
         return false;

@@ -13,7 +13,7 @@
 		response.sendRedirect("/JSP_Eclipse/index.jsp");
 	}
 	else{
-		response.sendRedirect("/JSP_Eclipse/index.jsp?p=member/signup.jsp");
+		response.sendRedirect("/JSP_Eclipse/index.jsp?p=member/signup.jsp?error");
 	}
 %>
 

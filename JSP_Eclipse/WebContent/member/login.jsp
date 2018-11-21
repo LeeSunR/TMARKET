@@ -2,7 +2,12 @@
     pageEncoding="EUC-KR"%>
 <div id="main_contents">
 <!--HEAD-->
+
+
    <script>
+		<% if(request.getParameter("errer")!=null){ %>
+			alert("아이디 혹은 비밀번호가 다릅니다.");
+		<% } %>
        $(function() {
            $('ul.tab li a').on('click',function(e) {
                e.preventDefault();

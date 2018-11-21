@@ -2,8 +2,12 @@
     pageEncoding="UTF-8"%>
     
 <div id="main_contents">
-     <script src="/JSP_Eclipse/js/signup.js">
-
+     <script src="/JSP_Eclipse/js/signup.js"/>
+	 <script>
+		<% if(request.getParameter("errer")!=null){ %>
+		alert("회원가입에 실패했습니다.");
+		<% } %>
+	 </script>
      </script>
      <div class="m-5">
        <h2>회원가입</h2>

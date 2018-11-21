@@ -4,6 +4,9 @@
 <!--HEAD-->
    <script>
        $(function() {
+	   		<% if(request.getParameter("errer")!=null){ %>
+			alert("회원탈퇴에 실패했습니다.");
+			<% } %>
            $('ul.tab li a').on('click',function(e) {
                e.preventDefault();
                $('ul.tab li').removeClass('on');
