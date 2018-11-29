@@ -37,7 +37,7 @@
 					</span>
 		
 					<!--타이틀-->
-					<a class="navbar-brand p-0" href="#" style="font-size:24px;font-weight: bold;" >T-MARKET</a>
+					<a class="navbar-brand p-0" href="#" style="font-size:24px;font-weight: bold;" onclick="location.href='/JSP_Eclipse/'" >T-MARKET</a>
 		
 					<!--카트 버튼-->
 					<span>

@@ -2,11 +2,16 @@ package useBean;
 
 import java.sql.*;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 public class JDB {
 	
 	static private Connection conn = null;
 	static private PreparedStatement pstmt = null;
-	private static final String HOST = "jdbc:mysql://baka.kr:3306/dongyang";
+	private static final String HOST = "jdbc:mysql://192.168.219.101:3306/dongyang";
 	private static final String USERNAME = "dongyang";
 	private static final String PASSWORD = "dongyang";
 	
@@ -14,15 +19,40 @@ public class JDB {
 		//static 클래스입니다.
 	}
 	
+	
+	/*
+	context.xml
+	<Resource name="jdbc/dongyang"
+           auth="Container"
+           type="javax.sql.DataSource"
+           driverClassName="com.mysql.jdbc.Driver" 
+           username="dongyang"
+           password="dongyang"
+           url="jdbc:mysql://baka.kr:3306/dongyang"
+           maxWait="5000"       
+	/>
+
+	web.xml
+	<resource-ref>
+	    <description>jsptest db</description>
+	    <res-ref-name>jdbc/jsptest</res-ref-name>
+	    <res-type>javax.sql.DataSource</res-type>
+	    <res-auth>Container</res-auth>
+	</resource-ref>
+	*/
+	
+	
 	//DB연결
 	private static void connect_MYSQL() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(HOST, USERNAME, PASSWORD);
-		} catch (ClassNotFoundException e) {
-			System.out.println(e.getMessage());
+		    Context init = new InitialContext();
+		    DataSource ds = (DataSource)init.lookup("java:comp/env/jdbc/dongyang");
+		    conn = ds.getConnection();
+		    
+		} catch (NamingException e) {
+		    e.printStackTrace();
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+		    e.printStackTrace();
 		}
 	}
 	

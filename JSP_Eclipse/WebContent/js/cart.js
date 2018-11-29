@@ -7,8 +7,7 @@ function delCart(){
 }
 
 function order(){
-  alert("order");
-  location.href="shop/payment.html";
+  location.href="/JSP_Eclipse/index.jsp?p=shop/payment.jsp";
 }
 
 function payment(){
