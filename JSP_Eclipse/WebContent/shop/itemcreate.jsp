@@ -17,7 +17,7 @@
  </script>
  <div class="m-5">
    <h2>상품등록</h2>
-   <form action="#" method="get">
+   <form action="shop/itemCreateProcess.jsp" method="post">
      <div class="row container-fluid p-0 m-0">
        <div class="col-12 col-md-6 mb-3">
          <h4>상품명</h4>

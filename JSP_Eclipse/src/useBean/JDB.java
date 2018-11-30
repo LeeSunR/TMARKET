@@ -1,6 +1,7 @@
 package useBean;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -76,7 +77,10 @@ public class JDB {
 			ResultSet rs = pstmt.executeQuery();
 			
 			if(rs.next()){
-				if(member.getPassword().equals(rs.getString("password"))) return true;
+				if(member.getPassword().equals(rs.getString("password"))) {
+					member.setGrade(rs.getString("grade"));
+					return true;
+				}
 				else return false;
 			}
 			else return false;
@@ -96,19 +100,22 @@ public class JDB {
 		
 		connect_MYSQL();
 		try{
-			pstmt = conn.prepareStatement("insert into MEMBER(IDT, PASSWORD, NAME, BIRTH, EMAIL) values(?, ?, ?, ?, ?)");
+			pstmt = conn.prepareStatement("insert into MEMBER(IDT, PASSWORD, NAME, BIRTH, EMAIL, GRADE) values(?, ?, ?, ?, ?, ?)");
+			
 			
 			String idt = member.getIdt();
 			String passwd = member.getPassword();
 			String name = member.getName();
 			String birth = member.getBirth();
 			String email = member.getEmail();
+			String grade = "member";
 			
 			pstmt.setString(1, idt);
 			pstmt.setString(2, passwd);
 			pstmt.setString(3, name);
 			pstmt.setString(4, birth);
 			pstmt.setString(5, email);
+			pstmt.setString(6, grade);
 			if(pstmt.executeUpdate()>0) return true;
 		}catch(Exception e){
 				System.out.println(e.getMessage());
@@ -142,6 +149,32 @@ public class JDB {
 		}finally{
 			close_MYSQL();
 		}
+	}
+	
+	public static ArrayList<Member> getAllInfo() {
+		
+		ArrayList<Member> arrlist = new ArrayList<Member>();
+		connect_MYSQL();
+		try{
+			pstmt = conn.prepareStatement("SELECT * FROM MEMBER");
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()){
+				Member m = new Member();
+				m.setName(rs.getString("NAME"));
+				m.setIdt(rs.getString("IDT"));
+				m.setEmail(rs.getString("EMAIL"));
+				m.setBirth(rs.getString("BIRTH"));
+				m.setGrade(rs.getString("GRADE"));
+				arrlist.add(m);
+			}
+			
+		}catch(Exception e){
+				System.out.println(e.getMessage());
+		}finally{
+			close_MYSQL();
+		}
+		return arrlist;
 	}
 	
 	/*
@@ -219,6 +252,53 @@ public class JDB {
 		}catch(Exception e){
 				System.out.println(e.getMessage());
 		}finally{		
+			close_MYSQL();
+		}
+		return false;
+	}
+	
+	public static boolean insert_item(Item item) {
+		connect_MYSQL();
+		try{
+			pstmt = conn.prepareStatement("insert into ITEM(NAME, PRICE) values(?, ?)");
+			
+			int tid = 0;
+			String name = item.getName();
+			int price = item.getPrice();
+			String[] sizes = item.getSize();
+			String[] colors = item.getColor();
+			
+			pstmt.setString(1, name);
+			pstmt.setInt(2, price);
+			
+			if(pstmt.executeUpdate()!=1) return false;
+			
+			pstmt = conn.prepareStatement("SELECT TID FROM ITEM WHERE NAME=? AND PRICE=?");
+			pstmt.setString(1, name);
+			pstmt.setInt(2, price);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) tid = rs.getInt("TID");
+			else return false;
+			
+			for(String size : sizes) {
+				pstmt = conn.prepareStatement("insert into ITEMSIZE(TID, SIZE) values(?, ?)");
+				pstmt.setInt(1, tid);
+				pstmt.setString(2, size);
+				if(pstmt.executeUpdate()!=1) return false;
+			}
+			
+			for(String color : colors) {
+				pstmt = conn.prepareStatement("insert into ITEMCOLOR(TID, COLOR) values(?, ?)");
+				pstmt.setInt(1, tid);
+				pstmt.setString(2, color);
+				if(pstmt.executeUpdate()!=1) return false;
+			}
+			
+			return true;
+			
+		}catch(Exception e){
+				System.out.println(e.getMessage());
+		}finally{
 			close_MYSQL();
 		}
 		return false;

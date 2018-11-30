@@ -9,8 +9,11 @@
 <%
 	if(useBean.JDB.login(member)){
 		session.setAttribute("idt",member.getIdt());
+		session.setAttribute("grade",member.getGrade());
+		System.out.println(member.getGrade());
 		response.sendRedirect("/JSP_Eclipse/index.jsp");
 	}
+
 	else{
 		response.sendRedirect("/JSP_Eclipse/index.jsp?p=member/login.jsp?errer");
 	}

@@ -6,6 +6,7 @@ public class Member {
 	private String name;
 	private String birth;
 	private String email;
+	private String grade;
 	
 	
 	public String getIdt() {
@@ -37,6 +38,12 @@ public class Member {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 	
 }

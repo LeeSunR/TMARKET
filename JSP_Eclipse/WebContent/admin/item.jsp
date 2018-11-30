@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%
+	//접속한 사람이 admin이 아닐경우 sendRedirect
+	String grade = (String)session.getAttribute("grade");
+	if(!grade.equals("admin"))
+	response.sendRedirect("/JSP_Eclipse/index.jsp");
+%>
+
 <div id="main_contents">
  <link rel="stylesheet" href="../css/order.css">
  <div class="m-5">
@@ -76,7 +83,7 @@
      </div>
    </ul>
    <div style="text-align:center">
-     <button class="btn btn-primary btn-lg" type="button" name="button" onclick="location.href='../shop/itemcreate.html'">추가</button>
+     <button class="btn btn-primary btn-lg" type="button" name="button" onclick="location.href='/JSP_Eclipse/index.jsp?p=shop/itemcreate.jsp'">추가</button>
     </div>
   </div>
 </div>

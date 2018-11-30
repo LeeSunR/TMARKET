@@ -27,7 +27,7 @@
 			<%}else{%>
 			
 			<a class="col-4 login_link" href="/JSP_Eclipse/member/logout.jsp">로그아웃</a>
-			<a class="col-4 login_link" href="/JSP_Eclipse/index.jsp?p=mypage/myinfo.jsp">회원정보변경</a>
+			<a class="col-4 login_link" href="/JSP_Eclipse/index.jsp?p=mypage/myinfo.jsp">정보변경</a>
 			<a class="col-4 login_link" href="/JSP_Eclipse/index.jsp?p=member/deleteid.jsp">회원탈퇴</a>
 			
 			<%}%>
