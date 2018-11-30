@@ -60,32 +60,32 @@
               <button class="col-4">SALE</button>
             </div>
             <ul id="list_item" class="row container-fluid p-0 m-0 mt-5">
-              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='shop/itemview.html'">
+              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='/JSP_Eclipse/index.jsp?p=shop/itemview.jsp'">
                 <img src="image/sampleT.png" alt="샘플티셔츠" style="width:100%">
                 <div class="item_name">SAMPLE T</div>
                 <div class="item_price">20,000￦</div>
               </li>
-              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='shop/itemview.html'">
+              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='/JSP_Eclipse/index.jsp?p=shop/itemview.jsp'">
                 <img src="image/sampleT.png" alt="샘플티셔츠" style="width:100%">
                 <div class="item_name">SAMPLE T</div>
                 <div class="item_price">20,000￦</div>
               </li>
-              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='shop/itemview.html'">
+              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='/JSP_Eclipse/index.jsp?p=shop/itemview.jsp'">
                 <img src="image/sampleT.png" alt="샘플티셔츠" style="width:100%">
                 <div class="item_name">SAMPLE T</div>
                 <div class="item_price">20,000￦</div>
               </li>
-              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='shop/itemview.html'">
+              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='/JSP_Eclipse/index.jsp?p=shop/itemview.jsp'">
                 <img src="image/sampleT.png" alt="샘플티셔츠" style="width:100%">
                 <div class="item_name">SAMPLE T</div>
                 <div class="item_price">20,000￦</div>
               </li>
-              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='shop/itemview.html'">
+              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='/JSP_Eclipse/index.jsp?p=shop/itemview.jsp'">
                 <img src="image/sampleT.png" alt="샘플티셔츠" style="width:100%">
                 <div class="item_name">SAMPLE T</div>
                 <div class="item_price">20,000￦</div>
               </li>
-              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='shop/itemview.html'">
+              <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='/JSP_Eclipse/index.jsp?p=shop/itemview.jsp'">
                 <img src="image/sampleT.png" alt="샘플티셔츠" style="width:100%">
                 <div class="item_name">SAMPLE T</div>
                 <div class="item_price">20,000￦</div>

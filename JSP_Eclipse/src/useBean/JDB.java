@@ -257,6 +257,9 @@ public class JDB {
 		return false;
 	}
 	
+	/*
+	 * 아이템등록
+	 */	
 	public static boolean insert_item(Item item) {
 		connect_MYSQL();
 		try{
@@ -267,7 +270,7 @@ public class JDB {
 			int price = item.getPrice();
 			String[] sizes = item.getSize();
 			String[] colors = item.getColor();
-			
+
 			pstmt.setString(1, name);
 			pstmt.setInt(2, price);
 			
@@ -277,8 +280,11 @@ public class JDB {
 			pstmt.setString(1, name);
 			pstmt.setInt(2, price);
 			ResultSet rs = pstmt.executeQuery();
-			if(rs.next()) tid = rs.getInt("TID");
+			if(rs.next()) item.setTid(rs.getInt("TID"));
 			else return false;
+			
+			tid = item.getTid();
+			
 			
 			for(String size : sizes) {
 				pstmt = conn.prepareStatement("insert into ITEMSIZE(TID, SIZE) values(?, ?)");

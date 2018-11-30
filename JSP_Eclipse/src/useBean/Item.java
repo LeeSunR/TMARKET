@@ -1,7 +1,7 @@
 package useBean;
 
 public class Item {
-	private String tid;
+	private int tid;
 	private String name;
 	private int price;
 	private String[] color;
@@ -12,10 +12,10 @@ public class Item {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getTid() {
+	public int getTid() {
 		return tid;
 	}
-	public void setTid(String tid) {
+	public void setTid(int tid) {
 		this.tid = tid;
 	}
 	public int getPrice() {
