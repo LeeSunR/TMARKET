@@ -1,7 +1,12 @@
 package useBean;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -263,16 +268,19 @@ public class JDB {
 	public static boolean insert_item(Item item) {
 		connect_MYSQL();
 		try{
-			pstmt = conn.prepareStatement("insert into ITEM(NAME, PRICE) values(?, ?)");
+			pstmt = conn.prepareStatement("insert into ITEM(NAME, PRICE, DATE) values(?, ?, ?)");
 			
 			int tid = 0;
 			String name = item.getName();
 			int price = item.getPrice();
 			String[] sizes = item.getSize();
 			String[] colors = item.getColor();
-
+			
+			java.sql.Date date = new java.sql.Date(new Date().getTime());
+			
 			pstmt.setString(1, name);
 			pstmt.setInt(2, price);
+			pstmt.setDate(3, date);
 			
 			if(pstmt.executeUpdate()!=1) return false;
 			

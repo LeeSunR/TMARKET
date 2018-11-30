@@ -1,11 +1,17 @@
 package useBean;
 
+import java.sql.Date;
+
 public class Item {
 	private int tid;
 	private String name;
 	private int price;
 	private String[] color;
 	private String[] size;
+	private Date date;
+	private boolean sale;
+	private int count;
+	
 	public String getName() {
 		return name;
 	}
@@ -35,6 +41,24 @@ public class Item {
 	}
 	public void setSize(String[] size) {
 		this.size = size;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public boolean isSale() {
+		return sale;
+	}
+	public void setSale(boolean sale) {
+		this.sale = sale;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	
 }
