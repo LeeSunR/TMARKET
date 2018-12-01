@@ -1,5 +1,6 @@
 package useBean;
 
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -316,5 +317,47 @@ public class JDB {
 			close_MYSQL();
 		}
 		return false;
+	}
+	
+	
+	public static Item getItemInfo(int tid) {
+		Item item = new Item();
+		item.setTid(tid);
+		connect_MYSQL();
+		try{
+			pstmt = conn.prepareStatement("SELECT * FROM ITEM WHERE TID=?");
+			pstmt.setInt(1, tid);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				item.setPrice(rs.getInt("PRICE"));
+				item.setName(rs.getString("NAME"));
+			}
+			
+			String color = "";
+			pstmt = conn.prepareStatement("SELECT COLOR FROM ITEMCOLOR WHERE TID=?");
+			pstmt.setInt(1, tid);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				String c = rs.getString("COLOR");
+				color += c+"\n";
+			}
+			item.setColor(color.split("\n"));
+			
+			String size = "";
+			pstmt = conn.prepareStatement("SELECT SIZE FROM ITEMSIZE WHERE TID=?");
+			pstmt.setInt(1, tid);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				String s = rs.getString("SIZE");
+				size += s+"\n";
+			}
+			item.setSize(size.split("\n"));
+			
+		}catch(Exception e){
+				System.out.println(e.getMessage());
+		}finally{
+			close_MYSQL();
+		}
+		return item;
 	}
 }
