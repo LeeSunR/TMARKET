@@ -57,9 +57,9 @@
 
           <div id="t_list">
             <div id="list_choice" class="row container-fluid p-0 m-0">
-              <button class="col-4 list_choice_active" onclick="get_item_list('new')">NEW</button>
-              <button class="col-4" onclick="get_item_list('best')">BEST</button>
-              <button class="col-4" onclick="get_item_list('sale')">SALE</button>
+              <button class="col-4 list_choice_active" onclick="get_item_list('new',this)">NEW</button>
+              <button class="col-4" onclick="get_item_list('best',this)">BEST</button>
+              <button class="col-4" onclick="get_item_list('sale',this)">SALE</button>
             </div>
             <ul id="list_item" class="row container-fluid p-0 m-0 mt-5">
             </ul>

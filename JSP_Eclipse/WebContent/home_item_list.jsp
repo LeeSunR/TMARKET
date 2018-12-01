@@ -21,7 +21,7 @@
 	<li class="col-6 col-md-4 p-3 m-0" onclick="location.href='/JSP_Eclipse/index.jsp?p=shop/itemview.jsp&tid=<%=item.getTid()%>'">
 		<img src="/JSP_Eclipse/image/item/<%=item.getTid()%>.jpg" alt="티셔츠이미지" style="width:100%">
 		<div class="item_name"><%=item.getName()%></div>
-		<div class="item_price"><%=item.getPrice()%></div>
+		<div class="item_price"><%=item.getPrice()%>원</div>
 	</li>
 	<%
 	}
