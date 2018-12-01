@@ -360,4 +360,72 @@ public class JDB {
 		}
 		return item;
 	}
+	
+	/*세일중인 아이템 상위6개*/
+	public static Item[] getSaleItemListTop6() {
+		Item[] items = {new Item(), new Item(), new Item(), new Item(), new Item(), new Item()};
+		int i = 0;
+		connect_MYSQL();
+		
+		try{
+			pstmt = conn.prepareStatement("SELECT * FROM `ITEM` WHERE SALE=1 ORDER BY TID DESC LIMIT 6");
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				items[i].setName(rs.getString("NAME"));
+				items[i].setPrice(rs.getInt("PRICE"));
+				items[i++].setTid(rs.getInt("TID"));
+			}
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}finally{
+			close_MYSQL();
+		}
+		System.out.println("ssss");
+		return items;
+	}
+	
+	/*인기상품 상위6개*/
+	public static Item[] getBestItemListTop6() {
+		Item[] items = {new Item(), new Item(), new Item(), new Item(), new Item(), new Item()};
+		int i = 0;
+		connect_MYSQL();
+		
+		try{
+			pstmt = conn.prepareStatement("SELECT * FROM `ITEM` ORDER BY COUNT DESC LIMIT 6");
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				items[i].setName(rs.getString("NAME"));
+				items[i].setPrice(rs.getInt("PRICE"));
+				items[i++].setTid(rs.getInt("TID"));
+			}
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}finally{
+			close_MYSQL();
+		}
+		
+		return items;
+	}
+	
+	/*새로운 상품 상위 6개*/
+	public static Item[] getNewItemListTop6() {
+		Item[] items = {new Item(), new Item(), new Item(), new Item(), new Item(), new Item()};
+		connect_MYSQL();
+		int i = 0;
+		try{
+			pstmt = conn.prepareStatement("SELECT * FROM `ITEM` ORDER BY DATE DESC LIMIT 6");
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				items[i].setName(rs.getString("NAME"));
+				items[i].setPrice(rs.getInt("PRICE"));
+				items[i++].setTid(rs.getInt("TID"));
+			}
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}finally{
+			close_MYSQL();
+		}
+		
+		return items;
+	}
 }
