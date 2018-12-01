@@ -69,7 +69,7 @@
            </div>
          </div>
          <div style="text-align:right;margin-top:20px;">
-            <button type="button" name="button" class="btn btn-primary d-block" style="width:100%">장바구니에 추가</button>
+            <button type="button" name="button" class="btn btn-primary d-block" style="width:100%" onclick="addCart(<%=item.getTid()%>)">장바구니에 추가</button>
           </div>
         </form>
       </div>
