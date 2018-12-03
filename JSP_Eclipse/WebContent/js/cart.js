@@ -65,6 +65,32 @@ function order(){
 
 function payment(){
   alert("payment");
+  var cart = getCookie("cart");
+  
+  $("#paymentinfo").append("<input type='text' name='cart' value='"+cart+"'>");
+}
+
+function paymentListShow(){
+	var price_sum = 0;
+	alert("paymentListShow");
+	var cart = getCookie("cart");
+	var cart_obj = JSON.parse(cart);
+	
+	for(var i=0;i<cart_obj.length;i++){
+		var tid = cart_obj[i]["tid"];
+		var size = cart_obj[i]["size"];
+		var color = cart_obj[i]["color"];
+		var qty = cart_obj[i]["qty"];
+	    $.get("shop/payment_list.jsp",{"tid":tid,"size":size,"color":color,"qty":qty},function(html){
+	    	$("#payment_cart_list").append(html);
+	    	
+	    	var cart_qty = parseInt($(html).find(".payment_cart_qty").text());
+	    	for(var i=0;i<cart_qty;i++){
+		    	price_sum += parseInt($(html).find(".payment_cart_price").text());
+		    	$("#payment_cart_total").text(price_sum);
+	    	}
+	    });
+	}
 }
 
 function emptyCart(){

@@ -14,6 +14,9 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import org.json.simple.*;
+import org.json.simple.parser.*;
+
 public class JDB {
 	
 	static private Connection conn = null;
@@ -427,5 +430,68 @@ public class JDB {
 		}
 		
 		return items;
+	}
+	
+	public static int insertOrder(String idt, String tel, String addr) {
+		int oid = -1;
+		
+		connect_MYSQL();
+		try{
+			pstmt = conn.prepareStatement("insert into TORDER(IDT, TEL, ADDR, STATUS) values(?, ?, ?, ?)");
+			pstmt.setString(1, idt);
+			pstmt.setString(2, tel);
+			pstmt.setString(3, addr);
+			pstmt.setString(4, "주문접수");
+			pstmt.executeUpdate();
+			
+			pstmt = conn.prepareStatement("SELECT * FROM TORDER WHERE IDT=? AND TEL=? AND ADDR=? ORDER BY OID DESC");
+			pstmt.setString(1, idt);
+			pstmt.setString(2, tel);
+			pstmt.setString(3, addr);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) oid = rs.getInt("oid");
+		}catch(Exception e){
+				System.out.println(e.getMessage());
+		}finally{		
+			close_MYSQL();
+		}
+		
+		return oid;
+	}
+	
+	public static void insertOrderItem(String str,int oid) {
+		JSONParser parser = new JSONParser();
+		try {
+			JSONArray arr = (JSONArray)parser.parse(str);
+			System.out.println(arr.size()+"크기의 JSON 배열");
+			
+			for(int i =0; i<arr.size();i++) {
+				JSONObject obj = (JSONObject)arr.get(i);
+
+				int tid = Integer.parseInt(obj.get("tid").toString());
+				String size = (String)obj.get("size");
+				String color = (String)obj.get("color");
+				int qty = Integer.parseInt(obj.get("qty").toString());
+				
+				connect_MYSQL();
+				try{
+					pstmt = conn.prepareStatement("insert into TORDERITEM(OID, TID, COLOR, SIZE, QTY) values(?, ?, ?, ?, ?)");
+					pstmt.setInt(1, oid);
+					pstmt.setInt(2, tid);
+					pstmt.setString(3, color);
+					pstmt.setString(4, size);
+					pstmt.setInt(5, qty);
+					pstmt.executeUpdate();
+					
+				}catch(Exception e){
+						System.out.println(e.getMessage());
+				}finally{		
+					close_MYSQL();
+				}
+			}
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			System.out.println("errer");
+		}
 	}
 }
