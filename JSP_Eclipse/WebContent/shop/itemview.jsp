@@ -65,7 +65,7 @@
              수량
            </div>
            <div class="view_info_main">
-             <input type="number" name="" value="1">
+             <input id="qty" type="number" name="" value="1">
            </div>
          </div>
          <div style="text-align:right;margin-top:20px;">
