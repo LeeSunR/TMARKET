@@ -67,7 +67,7 @@ public class JDB {
 	}
 	
 	//DB연결 해제
-	private static void close_MYSQL() {
+	public static void close_MYSQL() {
 		if(pstmt != null) try{pstmt.close();}catch(SQLException sqle){}
 		if(conn != null) try{conn.close();}catch(SQLException sqle){}
 	}
@@ -493,5 +493,36 @@ public class JDB {
 			// TODO Auto-generated catch block
 			System.out.println("errer");
 		}
+	}
+	
+	public static ResultSet getOrderInfo() {
+		ResultSet rs = null;
+		
+		connect_MYSQL();
+		try{
+			pstmt = conn.prepareStatement("SELECT * FROM TORDER JOIN MEMBER WHERE TORDER.IDT = MEMBER.IDT");
+			rs = pstmt.executeQuery();
+		}catch(Exception e){
+				System.out.println(e.getMessage());
+		}finally{		
+		}
+		
+		return rs;
+	}
+	
+	public static ResultSet getOrderInfo(String tid) {
+		ResultSet rs = null;
+		
+		connect_MYSQL();
+		try{
+			pstmt = conn.prepareStatement("SELECT * FROM TORDER JOIN MEMBER WHERE TORDER.IDT = MEMBER.IDT AND TORDER.IDT=?");
+			pstmt.setString(1,tid);
+			rs = pstmt.executeQuery();
+		}catch(Exception e){
+				System.out.println(e.getMessage());
+		}finally{		
+		}
+		
+		return rs;
 	}
 }
