@@ -2,18 +2,17 @@
 
 <div id="main_contents">
   <div class="m-5">
-    <form action="index.html" method="post">
+    <form action="/JSP_Eclipse/service/mailSend.jsp" method="post">
       <h2> QnA </h2><br>
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-      <label for="name">Your Name:</label>
-      <input type="name" class="form-control" id="name" placeholder="Enter Your Name" name="name">
+      <label for="from">From : </label>
+      <input type="from" class="form-control" id="from" placeholder="from" name="from">
+      <label for="to">To:</label>
+      <input type="to" class="form-control" id="to" placeholder="to" name="to">
+      <label for="subject">제목:</label>
+      <input type="subject" class="form-control" id="subject" placeholder="subject" name="subject">
       <label for="comment">Comment:</label>
-      <textarea class="form-control" rows="15" id="comment"></textarea>
+      <textarea class="form-control" rows="15" id="comment" name="comment"></textarea>
       <div style="text-align:right; margin-top:15px;">
-        <button type="button" class="btn btn-primary">전송</button>
+        <button type="submit" class="btn btn-primary">전송</button>
       </div>
     </form>
-  </div>
-  <!--클릭하면 관리자 메일로 보내지게 함 form action=""안에 변경.-->
-</div>
