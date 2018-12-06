@@ -585,4 +585,35 @@ public class JDB {
 		
 		return arr;
 	}
+	
+	public static boolean getGrade(Member member) {
+	      connect_MYSQL();
+	      try{
+	         pstmt = conn.prepareStatement("update MEMBER set GRADE=? where IDT = ?");
+	         String grade = "member";
+	         pstmt.setString(1, grade);
+	         pstmt.setString(2, member.getIdt());
+	         if(pstmt.executeUpdate()>0) return true;
+	      }catch(Exception e){
+	            System.out.println(e.getMessage());
+	      }finally{
+	         close_MYSQL();
+	      }
+	      return false;
+	}
+	
+   public static ArrayList<String> emailAuth(Member member) {
+	      ArrayList<String> arrlist = new ArrayList<String>();      
+	      arrlist.add(member.getEmail());      
+	      arrlist.add(RandomNum());
+	      return arrlist;
+	   }
+	   public static String RandomNum() {
+	      StringBuffer buffer = new StringBuffer();
+	      for(int i=0; i<=6; i++) {
+	         int n = (int) (Math.random()*10);
+	         buffer.append(n);
+	      }
+	      return buffer.toString();
+	   }
 }
