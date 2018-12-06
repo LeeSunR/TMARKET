@@ -8,14 +8,8 @@
 </jsp:useBean>
 
 <!-- TODO DB INSERT -->
-
 <%
-	if(useBean.JDB.signup(member)){
-		response.sendRedirect("/JSP_Eclipse/index.jsp?p=member/authentication.jsp");
-	}
-	else{
-		response.sendRedirect("/JSP_Eclipse/index.jsp?p=member/signup.jsp?error");
-	}
+	if(useBean.JDB.getGrade(member))
+		response.sendRedirect("JSP_Eclipse/index.jsp?p=member/login.jsp");
 %>
-
 
