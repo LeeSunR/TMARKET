@@ -40,16 +40,16 @@
 			<li>SHOP
 				<ul class="nav flex-column">
 					<li class="nav-item">
-						<a class="nav-link p-0" href="/JSP_Eclipse/index.jsp?p=shop/list.jsp">SHOW ALL</a>
+						<a class="nav-link p-0" href="/JSP_Eclipse/index.jsp?p=shop/list.jsp?c=SHOW ALL">SHOW ALL</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link p-0" href="/JSP_Eclipse/index.jsp?p=shop/list.jsp">BEST</a>
+						<a class="nav-link p-0" href="/JSP_Eclipse/index.jsp?p=shop/list.jsp?c=BEST">BEST</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link p-0" href="/JSP_Eclipse/index.jsp?p=shop/list.jsp">SALE</a>
+						<a class="nav-link p-0" href="/JSP_Eclipse/index.jsp?p=shop/list.jsp?c=SALE">SALE</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link p-0" href="/JSP_Eclipse/index.jsp?p=shop/list.jsp">NEW</a>
+						<a class="nav-link p-0" href="/JSP_Eclipse/index.jsp?p=shop/list.jsp?c=NEW">NEW</a>
 					</li>
 				</ul>
 			</li>

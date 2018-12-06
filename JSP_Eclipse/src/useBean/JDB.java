@@ -546,6 +546,41 @@ public class JDB {
 		}catch(Exception e){
 				System.out.println(e.getMessage());
 		}finally{		
+			close_MYSQL();
+		}
+		
+		return arr;
+	}
+	
+	public static ArrayList<Item> getItemList(String category,String namePattern,int min, int max) {
+		ArrayList<Item> arr = new ArrayList<Item>();
+		
+		if(namePattern==null)namePattern="%%";
+		else if(namePattern.equals(""))namePattern="%%";
+		else namePattern = "%"+namePattern+"%";
+		
+		connect_MYSQL();
+		try{
+			if(category.equals("SHOW ALL")) pstmt = conn.prepareStatement("SELECT * FROM ITEM WHERE NAME LIKE ? AND PRICE>? AND PRICE<? ORDER BY TID DESC");
+			else if(category.equals("NEW")) pstmt = conn.prepareStatement("SELECT * FROM ITEM WHERE NAME LIKE ? AND PRICE>? AND PRICE<? ORDER BY TID DESC LIMIT 12");
+			else if(category.equals("BEST")) pstmt = conn.prepareStatement("SELECT * FROM ITEM WHERE NAME LIKE ? AND PRICE>? AND PRICE<? ORDER BY COUNT DESC LIMIT 12");
+			else if(category.equals("SALE")) pstmt = conn.prepareStatement("SELECT * FROM ITEM WHERE NAME LIKE ? AND PRICE>? AND PRICE<? AND SALE=1 ORDER BY TID DESC");
+			else return null;
+			pstmt.setString(1,namePattern);
+			pstmt.setInt(2,min);
+			pstmt.setInt(3,max);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Item item = new Item();
+				item.setTid(rs.getInt("TID"));
+				item.setName(rs.getString("NAME"));
+				item.setPrice(rs.getInt("PRICE"));
+				arr.add(item);
+			}
+		}catch(Exception e){
+				System.out.println(e.getMessage());
+		}finally{
+			close_MYSQL();
 		}
 		
 		return arr;
