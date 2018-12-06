@@ -47,7 +47,7 @@
               </script>
             </div>
             <div style="text-align:right;">
-            	<Button class="btn btn-sm btn-primary">더보기..</Button>
+            	<Button class="btn btn-sm btn-primary" onclick="window.open('/JSP_Eclipse/mypage/orderitemlist.jsp?oid=<%=rs.getInt("OID")%>','orderlist', 'height=360, width=640, left=400, top=200, location=no');">더보기..</Button>
             </div>
           </div>
         </div>
