@@ -10,6 +10,6 @@
 <!-- TODO DB INSERT -->
 <%
 	if(useBean.JDB.getGrade(member))
-		response.sendRedirect("JSP_Eclipse/index.jsp?p=member/login.jsp");
+		response.sendRedirect("/JSP_Eclipse/index.jsp");
 %>
 
