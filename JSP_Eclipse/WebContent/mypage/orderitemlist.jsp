@@ -4,8 +4,8 @@
 <%@ page import = "java.sql.*" %>
 
 <%
-	request.setCharterEncoding("UTF-8");
-	int oid = request.getParameter("oid");
+	request.setCharacterEncoding("UTF-8");
+	int oid = Integer.parseInt(request.getParameter("oid"));
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

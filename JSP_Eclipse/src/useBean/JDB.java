@@ -525,4 +525,29 @@ public class JDB {
 		
 		return rs;
 	}
+	
+	public static ArrayList<TorderItem> getOrderItemList(int oid) {
+		ArrayList<TorderItem> arr = new ArrayList<TorderItem>();
+		
+		connect_MYSQL();
+		try{
+			pstmt = conn.prepareStatement("SELECT * FROM TORDERITEM WHERE OID=?");
+			pstmt.setInt(1,oid);
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				TorderItem torderItem = new TorderItem();
+				torderItem.setOid(rs.getInt("OID"));
+				torderItem.setTid(rs.getInt("TID"));
+				torderItem.setColor(rs.getString("COLOR"));
+				torderItem.setSize(rs.getString("SIZE"));
+				torderItem.setQty(rs.getInt("QTY"));
+				arr.add(torderItem);
+			}
+		}catch(Exception e){
+				System.out.println(e.getMessage());
+		}finally{		
+		}
+		
+		return arr;
+	}
 }
