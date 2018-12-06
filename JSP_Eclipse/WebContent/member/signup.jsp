@@ -4,7 +4,7 @@
 <div id="main_contents">
      <script src="/JSP_Eclipse/js/signup.js"/>
 	 <script>
-		<% if(request.getParameter("errer")!=null){ %>
+		<% if(request.getParameter("error")!=null){ %>
 		alert("회원가입에 실패했습니다.");
 		<% } %>
 	 </script>
