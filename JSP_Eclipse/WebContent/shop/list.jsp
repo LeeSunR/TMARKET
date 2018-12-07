@@ -42,7 +42,7 @@
    </form>
    <ul id="list_item" class="row container-fluid p-0 m-0 mt-2">
    	<% for(int i =0;i<items.size();i++){ %>
-     <li class="col-6 col-md-4 p-3 m-0">
+     <li class="col-6 col-md-4 p-3 m-0" onclick="location.href='/JSP_Eclipse/index.jsp?p=shop/itemview.jsp&tid=<%=items.get(i).getTid() %>'">
        <img src="/JSP_Eclipse/image/item/<%=items.get(i).getTid() %>.jpg" alt="샘플티셔츠" style="width:100%">
        <div class="item_name"><%=items.get(i).getName() %></div>
        <div class="item_price"><%=items.get(i).getPrice() %>￦</div>
