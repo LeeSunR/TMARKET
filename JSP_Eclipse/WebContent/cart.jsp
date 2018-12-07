@@ -8,7 +8,7 @@
  <div id="cart_list">
    <ul>
    </ul>
-   <p style="text-align:right;font-weight:bold;font-size:24px;">TOTAL : <span id="cart_total">xxxxx</span>원</p>
+   <p style="text-align:right;font-weight:bold;font-size:24px;">TOTAL : <span id="cart_total">0</span>원</p>
    <div class="p-2">
      <button type="button" onclick="emptyCart()" style="width:100%" class="btn btn-danger m-0">비우기</button>
      <button type="button" onclick="order()" style="width:100%" class="btn btn-primary mt-2">주문하기</button>

@@ -4,6 +4,7 @@
 <%
 	//접속한 사람이 admin이 아닐경우 sendRedirect
 	String grade = (String)session.getAttribute("grade");
+	String idt = (String)session.getAttribute("idt");
 	if(!grade.equals("admin"))
 	response.sendRedirect("/JSP_Eclipse/index.jsp");
 	ArrayList<Member> members = JDB.getAllInfo();
@@ -16,6 +17,14 @@
      text-align: center;
    }
  </style>
+	<script>
+		function memberGradeChange(obj,idt){
+			var grade = $(obj).val();
+			alert($(obj).val());
+		    $.get("/JSP_Eclipse/admin/member_grade_update.jsp",{"grade":grade,"idt":idt},function(html){
+		    });
+		}
+	</script>
  <!--TODO 이곳에 페이지 내용을 작성합니다.-->
  <div class="m-5">
    <h2>회원관리</h2>
@@ -43,12 +52,12 @@
            <td><%=m.getBirth()%></td>
            <td><%=m.getEmail()%></td>
            <td>
-             <select name="" onchanged="">
+             <select name="" onchange="memberGradeChange(this,'<%=m.getIdt()%>')">
              	<% if(m.getGrade().equals("member")) {%>
-               <option value="user" selected>일반회원</option>
+               <option value="member" selected>일반회원</option>
                <option value="admin">관리자</option>
                <%} else if(m.getGrade().equals("admin")) {%>
-               <option value="user">일반회원</option>
+               <option value="member">일반회원</option>
                <option value="admin" selected>관리자</option>
                <%} %>
              </select>

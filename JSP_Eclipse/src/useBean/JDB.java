@@ -746,4 +746,36 @@ public class JDB {
 			close_MYSQL();
 		}
 	}
+   
+	public static boolean updateMemberGrade(String idt,String grade) {
+		boolean result = false;
+		connect_MYSQL();
+		try{
+			pstmt = conn.prepareStatement("update MEMBER set GRADE=? WHERE IDT=?");
+			pstmt.setString(1, grade);
+			pstmt.setString(2, idt);
+			if(pstmt.executeUpdate()>0) result = true;
+		}catch(Exception e){
+				System.out.println(e.getMessage());
+		}finally{		
+			close_MYSQL();
+		}
+		return result;
+	}
+	
+	public static boolean updateOrderStatus(int oid ,String status) {
+		boolean result = false;
+		connect_MYSQL();
+		try{
+			pstmt = conn.prepareStatement("UPDATE TORDER SET STATUS=? WHERE OID=?");
+			pstmt.setString(1, status);
+			pstmt.setInt(2, oid);
+			if(pstmt.executeUpdate()>0) result = true;
+		}catch(Exception e){
+				System.out.println(e.getMessage());
+		}finally{		
+			close_MYSQL();
+		}
+		return result;
+	}
 }

@@ -63,6 +63,6 @@
             </div>
             <ul id="list_item" class="row container-fluid p-0 m-0 mt-5">
             </ul>
-            <button type="button" style="font-size:16px;background-color:orange;font-weight: bold;" class="btn btn-warning" onclick="location.href='shop/list.html'">MORE</button>
+            <!-- <button type="button" style="font-size:16px;background-color:orange;font-weight: bold;" class="btn btn-warning" onclick="location.href='shop/list.html'">MORE</button> -->
           </div>
         </div>

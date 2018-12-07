@@ -8,11 +8,21 @@
 	if(!grade.equals("admin"))
 	response.sendRedirect("/JSP_Eclipse/index.jsp");
 	ResultSet rs = JDB.getOrderInfo();
+	
+	
 %>
 
 <div id="main_contents">
   <link rel="stylesheet" href="/JSP_Eclipse/css/order.css">
   <div class="m-5">
+  	<script>
+  		function orderStastusChange(obj,oid){
+  			var status = $(obj).val();
+  			
+  		    $.get("/JSP_Eclipse/admin/order_status.update.jsp",{"status":status,"oid":oid},function(html){
+  		    });
+  		}
+  	</script>
     <h2>주문관리</h2>
     <ul class="d-block m-0 p-0">
       <%
@@ -32,7 +42,7 @@
             </div>
             <div class="order_item_info">
               <span class="order_item_info_title">상태변경</span> :
-              <select id="order_status_<%=rs.getInt("OID")%>" class="" name="" onchange="">
+              <select id="order_status_<%=rs.getInt("OID")%>" onchange="orderStastusChange(this,<%=rs.getInt("OID")%>)">
                 <option value="주문접수">주문접수</option>
                 <option value="결제완료">결제완료</option>
                 <option value="배송중">배송중</option>
