@@ -34,4 +34,5 @@
       		<input type="text" class="form-control" id="authnum" placeholder=인증번호 입력 name="authnum">
 			<input type="submit" class="btn btn-info" value="Submit">
 	      </form>
-      </div>
+   </div>
+</div>
