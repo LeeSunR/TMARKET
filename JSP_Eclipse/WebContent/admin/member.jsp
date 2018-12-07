@@ -20,7 +20,6 @@
 	<script>
 		function memberGradeChange(obj,idt){
 			var grade = $(obj).val();
-			alert($(obj).val());
 		    $.get("/JSP_Eclipse/admin/member_grade_update.jsp",{"grade":grade,"idt":idt},function(html){
 		    });
 		}
@@ -56,9 +55,15 @@
              	<% if(m.getGrade().equals("member")) {%>
                <option value="member" selected>일반회원</option>
                <option value="admin">관리자</option>
+               <option value="nothing">임시회원</option>
                <%} else if(m.getGrade().equals("admin")) {%>
                <option value="member">일반회원</option>
                <option value="admin" selected>관리자</option>
+               <option value="nothing">임시회원</option>
+               <%} else if(m.getGrade().equals("nothing")) {%>
+               <option value="member">일반회원</option>
+               <option value="admin">관리자</option>
+               <option value="nothing" selected>임시회원</option>
                <%} %>
              </select>
            </td>

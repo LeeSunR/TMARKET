@@ -8,6 +8,9 @@
 		<% if(request.getParameter("errer")!=null){ %>
 			alert("아이디 혹은 비밀번호가 다릅니다.");
 		<% } %>
+		<% if(request.getParameter("nothing")!=null){ %>
+		alert("이메일 인증이 안된 계정입니다.");
+		<% } %>
        $(function() {
            $('ul.tab li a').on('click',function(e) {
                e.preventDefault();
@@ -15,6 +18,7 @@
                $(this).closest('li').addClass('on');
            });
        });
+       
    </script>
    <link type="text/css" rel="stylesheet" href="/JSP_Eclipse/css/login.css">
    <!--TODO 이곳에 페이지 내용을 작성합니다.-->

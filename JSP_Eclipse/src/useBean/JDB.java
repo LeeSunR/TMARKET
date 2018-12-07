@@ -130,7 +130,7 @@ public class JDB {
 			String name = member.getName();
 			String birth = member.getBirth();
 			String email = member.getEmail();
-			String grade = "member";
+			String grade = "nothing";
 			
 			pstmt.setString(1, idt);
 			pstmt.setString(2, passwd);
