@@ -5,7 +5,7 @@ import javax.mail.PasswordAuthentication;
 
 public class SMTPAuthenticatior extends Authenticator{
 	protected javax.mail.PasswordAuthentication getPasswordAuthentication(){
-		return new PasswordAuthentication("wjswlstn90@naver.com","159357qwe");
-		//°¢°¢ id,pw ³ÖÀ¸¸é µÊ ; ³×ÀÌ¹ö ¾ÆÀÌµğ·Î ·Î±×ÀÎ
+		return new PasswordAuthentication("","");
+		//ê°ê° id,pw ë„£ìœ¼ë©´ ë¨ ; ë„¤ì´ë²„ ì•„ì´ë””ë¡œ ë¡œê·¸ì¸
 	}
 }
